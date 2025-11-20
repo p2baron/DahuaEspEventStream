@@ -10,11 +10,10 @@ It supports:
 
 - Multiple devices simultaneously  
 - Doorbell detection  
-- ESP32 & ESP32-C3  
+- ESP32 (Tested on ESP32-C3
 - Background FreeRTOS tasks  
 - Auto-reconnect  
 - Optional debug logging (`setDebugStream()`)  
-- Zero Serial output unless debugging is enabled  
 
 ---
 
@@ -22,7 +21,7 @@ It supports:
 
 This project started as a practical solution to a real problem:
 
-> **“I needed an ESP32 that listens to the Dahua event stream so I can trigger a physical doorbell (via a relay) whenever someone presses either of my two VTO panels.”**
+> **“I needed an ESP32 that listens to the Dahua event stream so I can trigger a physical chome (via a relay) whenever someone presses either of my two VTO panels.”**
 
 Dahua’s event stream is **not limited to VTOs**:
 
@@ -30,7 +29,7 @@ Dahua’s event stream is **not limited to VTOs**:
 - Dahua **NVRs** do too (channel alarms, door events, system notifications)  
 - Many other Dahua devices expose the same `eventManager.cgi` API  
 
-So this library isn’t just for doorbells — it’s a **general ESP32 Dahua event streaming client**.
+So this library isn’t just for VTO's — it’s a **general ESP32 Dahua event streaming client**.
 
 You can use it to trigger:
 
@@ -68,33 +67,25 @@ Redirect to another UART:
 
 ```vto.setDebugStream(&Serial2);```
 
-
 Disable again:
 
 ```vto.setDebugStream(nullptr);```
 
-🔐 HTTPS Support
+🔐 HTTPS Support (untested)
 ```
 cfg.https = true;
 cfg.port  = 443;
 ```
-
 Dahua self-signed certs accepted automatically.
 
 📡 Event Detection Logic
 
 
-
 Supported doorbell indicators:
 
-Code=Doorbell
-action=Ring, action=Start, action=Pulse
-JSON: "Action":"Invite" or "Ring"
-JSON: "State":1
+#Code=Doorbell
+#action=Ring, action=Start, action=Pulse
+#JSON: "Action":"Invite" or "Ring"
+#JSON: "State":1
 
 You can always parse raw lines to detect custom events.
-
-
-
-
-
