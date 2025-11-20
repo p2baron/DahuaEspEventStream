@@ -71,6 +71,8 @@ Disable again:
 
 ```vto.setDebugStream(nullptr);```
 
+---
+
 🔐 HTTPS Support (untested)
 ```
 cfg.https = true;
@@ -78,14 +80,15 @@ cfg.port  = 443;
 ```
 Dahua self-signed certs accepted automatically.
 
-📡 Event Detection Logic
+---
 
+📡 Event Detection Logic
 
 Supported doorbell indicators:
 
-#Code=Doorbell
-#action=Ring, action=Start, action=Pulse
-#JSON: "Action":"Invite" or "Ring"
-#JSON: "State":1
+* Code=Doorbell
+* action=Ring, action=Start, action=Pulse
+* JSON: "Action":"Invite" or "Ring"
+* JSON: "State":1
 
 You can always parse raw lines to detect custom events.
