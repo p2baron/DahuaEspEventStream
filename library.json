@@ -1,0 +1,11 @@
+{
+    "name": "DahuaEspEventStream",
+    "version": "0.1.0",
+    "description": "Minimal client for Dahua VTO event stream",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/p2baron/DahuaEspEventStream.git"
+    },
+    "frameworks": "arduino",
+    "platforms": "espressif32"
+  }
