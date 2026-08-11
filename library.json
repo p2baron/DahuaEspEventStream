@@ -7,5 +7,8 @@
       "url": "https://github.com/p2baron/DahuaEspEventStream.git"
     },
     "frameworks": "arduino",
-    "platforms": "espressif32"
+    "platforms": "espressif32",
+    "dependencies": {
+      "bblanchon/ArduinoJson": "^7"
+    }
   }
